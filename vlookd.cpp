@@ -20,7 +20,7 @@
 #include "vlookd.h"
 
 VLookd::VLookd(QObject *parent) : QObject(parent) {
-    this->audio = new Audio;
+    this->audio = new AudioALSA;
     this->lastVolume = audio->getVolume();
 }
 

@@ -28,7 +28,7 @@
 #include <QDebug>
 #include <cmath>
 
-#include "Audio.h"
+#include "Audio/AudioALSA.h"
 
 #define VISIBILITY_INTERVAL 800
 #define CRITICAL_VALUE 80

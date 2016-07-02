@@ -42,7 +42,7 @@ VLook::VLook(QWidget *parent) :
 
 
 void VLook::showVolume() {
-    ui->pbVolume->setValue(Audio().getVolume());
+    ui->pbVolume->setValue(AudioALSA().getVolume());
     this->show();
     this->hidingTimer->start(VISIBILITY_INTERVAL);
 }

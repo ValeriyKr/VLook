@@ -20,23 +20,13 @@
 #ifndef VLOOK_AUDIO_H
 #define VLOOK_AUDIO_H
 
-#include <unistd.h>
-#include <fcntl.h>
-#include <string>
-#include <alsa/asoundlib.h>
-
 class Audio {
 public:
-	Audio();
-	long getVolume();
-	void setMixName(std::string mixName);
-	void setCard(std::string cardName);
-
-private:
-	std::string mixName;
-	std::string card;
-	unsigned int mixIndex;
+    Audio() {}
+    virtual ~Audio() {}
+    virtual long getVolume() const = 0;
 };
 
 
 #endif //VLOOK_AUDIO_H
+ 

@@ -4,17 +4,21 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = VLook
 TEMPLATE = app
+QMAKE_CXXFLAGS += -Wall -Wextra -Wpedantic
+INCLUDEPATH += Audio
+
 
 
 SOURCES += main.cpp\
         vlook.cpp \
-    Audio.cpp \
-    vlookd.cpp
+    vlookd.cpp \
+    Audio/AudioALSA.cpp
 
 HEADERS  += vlook.h \
-    Audio.h \
     main.h \
-    vlookd.h
+    vlookd.h \
+    Audio/Audio.h \
+    Audio/AudioALSA.h
 
 FORMS    += vlook.ui
 

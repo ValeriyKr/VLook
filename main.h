@@ -27,7 +27,8 @@
 #include <csignal>
 #include <unistd.h>
 
-#include "Audio.h"
+#include "Audio/Audio.h"
+#include "Audio/AudioALSA.h"
 #include "vlook.h"
 #include "vlookd.h"
 

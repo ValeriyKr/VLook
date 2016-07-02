@@ -17,33 +17,31 @@
         along with VLook. If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef VLOOKD_H
-#define VLOOKD_H
+#ifndef VLOOK_AUDIOALSA_H
+#define VLOOK_AUDIOALSA_H
 
-#include <QApplication>
-#include <QDebug>
-#include <csignal>
+#include <unistd.h>
+#include <fcntl.h>
+#include <string>
+#include <alsa/asoundlib.h>
+#include <exception>
+#include <stdexcept>
 
-#include "Audio/Audio.h"
-#include "Audio/AudioALSA.h"
+#include "Audio.h"
 
-
-class VLookd : public QObject
-{
-    Q_OBJECT
+class AudioALSA : public Audio {
 public:
-    explicit VLookd(QObject *parent = 0);
-    virtual ~VLookd();
-
-signals:
-    void volumeChanged();
-
-public slots:
-    void checkVolume();
+    AudioALSA();
+    virtual ~AudioALSA();
+    long getVolume() const;
+    void setMixName(const std::string mixName);
+    void setCard(const std::string cardName);
 
 private:
-    Audio *audio;
-    long lastVolume;
+	std::string mixName;
+	std::string card;
+    unsigned int mixIndex;
 };
 
-#endif // VLOOKD_H
+
+#endif //VLOOK_AUDIOALSA_H

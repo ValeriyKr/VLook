@@ -19,6 +19,9 @@
 
 #include "main.h"
 
+// Uncomment next line to pretend forking after start
+// #define DBG_DONT_FORK
+
 int main(int argc, char *argv[])
 {
 #ifndef DBG_DONT_FORK
