@@ -34,8 +34,8 @@ public:
     AudioALSA();
     virtual ~AudioALSA();
     long getVolume() const;
-    void setMixName(const std::string mixName);
-    void setCard(const std::string cardName);
+    void setMixName(const std::string &mixName);
+    void setCard(const std::string &cardName);
 
 private:
 	std::string mixName;

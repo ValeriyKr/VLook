@@ -54,8 +54,8 @@ long AudioALSA::getVolume() const {
     }
     elem = snd_mixer_find_selem(handle, sid);
     if (!elem) {
+        snd_mixer_close(handle);
         throw std::runtime_error("Error while finding mixer element");
-        return -5;
     }
 
 	// Get sound volume
@@ -75,12 +75,12 @@ long AudioALSA::getVolume() const {
 }
 
 
-void AudioALSA::setMixName(const std::string mixName) {
+void AudioALSA::setMixName(const std::string &mixName) {
 	this->mixName = mixName;
 }
 
 
-void AudioALSA::setCard(const std::string cardName) {
+void AudioALSA::setCard(const std::string &cardName) {
 	this->card = cardName;
 }
 
