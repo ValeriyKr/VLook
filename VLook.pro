@@ -23,3 +23,8 @@ HEADERS  += vlook.h \
 FORMS    += vlook.ui
 
 LIBS += -L/usr/lib/x86_64-linux-gnu/ -lasound
+
+DISTFILES +=
+
+RESOURCES += \
+    res/vlook_logo.qrc

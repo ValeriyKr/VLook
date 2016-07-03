@@ -1,22 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-        Copyright 2016 Valeriy Kireev
-
-        This file is part of VLook.
-
-        VLook is free software: you can redistribute it and/or modify
-        it under the terms of the GNU General Public License as published by
-        the Free Software Foundation, either version 3 of the License, or
-        (at your option) any later version.
-
-        VLook is distributed in the hope that it will be useful,
-        but WITHOUT ANY WARRANTY; without even the implied warranty of
-        MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-        GNU General Public License for more details.
-
-        You should have received a copy of the GNU General Public License
-        along with VLook. If not, see <http://www.gnu.org/licenses/>.
--->
 <ui version="4.0">
  <class>VLook</class>
  <widget class="QWidget" name="VLook">
@@ -43,6 +25,14 @@
   <property name="windowTitle">
    <string notr="true">VLook</string>
   </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">.QWidget {
+	background-image: url(:/logo/vlook_logo.png);
+}</string>
+  </property>
   <widget class="QWidget" name="verticalLayoutWidget">
    <property name="geometry">
     <rect>
@@ -61,8 +51,14 @@
         <height>100</height>
        </size>
       </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 170, 0);</string>
+      </property>
       <property name="text">
-       <string>VLook</string>
+       <string/>
       </property>
       <property name="alignment">
        <set>Qt::AlignHCenter|Qt::AlignTop</set>
@@ -71,10 +67,15 @@
     </item>
     <item>
      <widget class="QProgressBar" name="pbVolume">
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
       <property name="styleSheet">
        <string notr="true">QProgressBar {
+	color: rgb(85, 255, 142);
 	border: 1px solid grey;
 	border-radius: 10px;
+	background-color: rgb(58, 129, 82);
     text-align: center;
 }
 

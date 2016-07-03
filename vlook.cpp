@@ -32,6 +32,9 @@ VLook::VLook(QWidget *parent) :
 
     this->setWindowFlags(Qt::Widget | Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint);
     this->setAttribute(Qt::WA_ShowWithoutActivating);
+    ui->lProgName->setAttribute(Qt::WA_TranslucentBackground);
+    ui->pbVolume->setAttribute(Qt::WA_TranslucentBackground);
+    ui->pbVolume->setAttribute(Qt::WA_NoBackground);
 
     this->hidingTimer = new QTimer;
     QObject::connect(this->hidingTimer, SIGNAL(timeout()), this, SLOT(hide()));
@@ -61,6 +64,7 @@ void VLook::changeVolumePBColor(int value) {
     } else {
         ui->pbVolume->setStyleSheet(ui->pbVolume->styleSheet() + "QProgressBar::chunk {background-color:#5855ff;}");
     }
+    ui->pbVolume->setAttribute(Qt::WA_TranslucentBackground);
 }
 
 
